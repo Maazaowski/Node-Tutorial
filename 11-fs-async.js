@@ -1,5 +1,6 @@
 const {readFile, writeFile} = require('fs')
 
+console.log('Reading files...')
 readFile('./content/first.txt', 'utf8',(error, result)=>{
     if (error){
         console.log(error)
@@ -16,6 +17,8 @@ readFile('./content/first.txt', 'utf8',(error, result)=>{
 
         const second = result
 
+        console.log('Writing files...')
+
         writeFile('./content/result-async.txt', `Result: ${first}\n ${second}`
         , (error, result)=> {
             if (error){
@@ -26,3 +29,5 @@ readFile('./content/first.txt', 'utf8',(error, result)=>{
         })
     })
 })
+
+console.log('Success')
